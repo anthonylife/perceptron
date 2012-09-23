@@ -1,0 +1,45 @@
+author: anthonylife
+mail: zhangwei.ltt@gmail.com
+================================================================
+
+Perceptron learing algorithm for mail classification.
+This program perform all the procudures in order.
+Procedure: 1.Extract main text from mails and create word tokens;
+           2.Get the stem of words and remove stop words;
+           3.Word Feature Selection by gini index and frequency
+           4.Compute TF-IDF and output feature file
+           5. 5-fold cross validation
+             5.1 partition
+             5.2 train
+             5.3 test
+             5.4 average and get F-score
+
+
+Third-parity libaries
+=====================
+
+nltk(python): http://nltk.org/
+    -- I use nltk.word_tokenize() function to seperate the irregular mail text.
+
+porter stem(python): http://pypi.python.org/pypi/stemming/1.0
+    -- I use stemming.porter2.stem() function to get stemming words.
+
+scipy, numpy(python): 
+    -- I use numpy to speed vector dot, and scipy.sparse.csr_matrix() function to get sparse representation.
+
+
+Quick Start
+===========
+run.py:
+    -- It includes all the process in this programming. In order to run this script, people should install all the third-party python libaries, including nltk, porter stemmer, scipy and numpy.
+
+run.simple.py:
+    -- This scripy only includes partition, training and testing procedure. People only need to have Scipy and Numpy installed.
+
+
+Final result
+===========
+After one time of 5-fold cross-validation, the final result is below:
+
+The F-score of class "Baseball" 0.945564 ...
+The F-score of class "Hockey" 0.946567 ...
